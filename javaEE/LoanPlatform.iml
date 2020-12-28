@@ -6,7 +6,7 @@
         <setting name="validation-enabled" value="true" />
         <setting name="provider-name" value="Hibernate" />
         <datasource-mapping>
-          <factory-entry name="entityManagerFactory" value="0346cead-c1d7-4898-afb5-483f92a8c4fe" />
+          <factory-entry name="entityManagerFactory" />
         </datasource-mapping>
         <naming-strategy-map />
       </configuration>
@@ -163,5 +163,19 @@
     <orderEntry type="library" name="Maven: com.aliyun:aliyun-java-sdk-ecs:4.2.0" level="project" />
     <orderEntry type="library" name="Maven: commons-fileupload:commons-fileupload:1.3.1" level="project" />
     <orderEntry type="library" name="Maven: commons-io:commons-io:2.2" level="project" />
+    <orderEntry type="library" name="Maven: io.opentelemetry:opentelemetry-api:0.13.1" level="project" />
+    <orderEntry type="library" name="Maven: io.opentelemetry:opentelemetry-context:0.13.1" level="project" />
+    <orderEntry type="library" name="Maven: io.opentelemetry:opentelemetry-api-baggage:0.13.1" level="project" />
+    <orderEntry type="library" name="Maven: io.opentelemetry:opentelemetry-api-common:0.13.1" level="project" />
+    <orderEntry type="library" name="Maven: io.opentelemetry:opentelemetry-api-metrics:0.13.0-alpha" level="project" />
+    <orderEntry type="library" name="Maven: io.opentelemetry:opentelemetry-api-trace:0.13.1" level="project" />
+    <orderEntry type="library" name="Maven: io.opentelemetry:opentelemetry-sdk:0.13.1" level="project" />
+    <orderEntry type="library" name="Maven: io.opentelemetry:opentelemetry-sdk-common:0.13.1" level="project" />
+    <orderEntry type="library" name="Maven: io.opentelemetry:opentelemetry-sdk-metrics:0.13.0-alpha" level="project" />
+    <orderEntry type="library" name="Maven: io.opentelemetry:opentelemetry-sdk-trace:0.13.1" level="project" />
+    <orderEntry type="library" name="Maven: io.opentelemetry:opentelemetry-exporter-prometheus:0.13.1" level="project" />
+    <orderEntry type="library" name="Maven: io.prometheus:simpleclient:0.9.0" level="project" />
+    <orderEntry type="library" name="Maven: io.prometheus:simpleclient_httpserver:0.9.0" level="project" />
+    <orderEntry type="library" name="Maven: io.prometheus:simpleclient_common:0.9.0" level="project" />
   </component>
 </module>
