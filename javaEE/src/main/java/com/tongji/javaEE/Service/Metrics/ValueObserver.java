@@ -26,7 +26,7 @@ public class ValueObserver {
     private final HTTPServer server;
     public long incomingMessageCount;
 
-    public ValueObserver(int port) throws IOException {
+    public ValueObserver(HTTPServer server) throws IOException {
         LongValueObserver observer =
                 meter
                         .longValueObserverBuilder("incoming.messages")
@@ -34,11 +34,6 @@ public class ValueObserver {
                         .setUnit("message")
                         .setUpdater(result -> result.observe(incomingMessageCount, Labels.empty()))
                         .build();
-
-        PrometheusCollector.builder()
-                .setMetricProducer(((SdkMeterProvider) meterSdkProvider).getMetricProducer())
-                .buildAndRegister();
-
-        server = new HTTPServer(port);
+        this.server = server;
     }
 }

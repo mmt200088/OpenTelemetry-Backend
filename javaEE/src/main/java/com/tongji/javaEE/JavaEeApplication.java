@@ -1,6 +1,8 @@
 package com.tongji.javaEE;
 
 import com.tongji.javaEE.Service.Metrics.ValueObserver;
+import com.tongji.javaEE.Service.Metrics.LongCounterSet;
+import io.prometheus.client.exporter.HTTPServer;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,7 +28,9 @@ public class JavaEeApplication {
 	/**
 	 * AIOps
 	 */
-	ValueObserver valueObserver = new ValueObserver(19090);
+	HTTPServer server = new HTTPServer(19090);
+	ValueObserver valueObserver = new ValueObserver(server);
+	LongCounterSet longCounterSet = new LongCounterSet(server);
 	/**
 	 * AIOps
 	 */
@@ -39,6 +43,7 @@ public class JavaEeApplication {
 		 */
 		long value = name.length();
 		valueObserver.incomingMessageCount = value;
+		longCounterSet.directoryCounter.add(1);
 		/**
 		 * AIOps
 		 */
