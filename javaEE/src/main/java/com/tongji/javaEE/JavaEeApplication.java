@@ -25,28 +25,8 @@ public class JavaEeApplication {
 		SpringApplication.run(JavaEeApplication.class, args);
 	}
 
-	/**
-	 * AIOps
-	 */
-	HTTPServer server = new HTTPServer(19090);
-	ValueObserver valueObserver = new ValueObserver(server);
-	LongCounterSet longCounterSet = new LongCounterSet(server);
-	/**
-	 * AIOps
-	 */
-
 	@GetMapping("/hello")
 	public String hello(@RequestParam(value = "name", defaultValue = "World") String name) {
-
-		/**
-		 * AIOps
-		 */
-		long value = name.length();
-		valueObserver.incomingMessageCount = value;
-		longCounterSet.directoryCounter.add(1);
-		/**
-		 * AIOps
-		 */
 
 		return String.format("Hello %s!", name);
 	}
